@@ -1,0 +1,7 @@
+{
+  "./": "./",
+  "/": "./",
+  "tasks": {
+    "run_backup": "deno run -A daily_db_backup.ts"
+  }
+}

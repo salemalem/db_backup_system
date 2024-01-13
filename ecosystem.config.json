@@ -1,0 +1,11 @@
+{
+  "apps": [
+    {
+      "name": "DB_backup",
+      "script": "deno",
+      "args": "task run_backup",
+      "watch": ["./"],
+      "watch_delay": 5000
+    }
+  ]
+}
