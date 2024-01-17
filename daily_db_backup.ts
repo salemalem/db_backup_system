@@ -6,7 +6,7 @@ async function run_db_backup() {
     const now = new Date();
     const timestamp = now.toISOString().replace(/T/, '_').replace(/\..+/, '').replace(/:/g, '-');
 
-    const backupFileName = `./db_backups/dump_${timestamp}.sql`;
+    const backupFileName = `./db_backups/dump_${timestamp}.dump`;
 
     const process = Deno.run({
     cmd: [
