@@ -9,15 +9,16 @@ async function run_db_backup() {
     const backupFileName = `./db_backups/dump_${timestamp}.dump`;
 
     const process = Deno.run({
-    cmd: [
-        "pg_dump",
-        "-U", "postgres", // Database username
-        "-d", "postgres", // Database name
-        "-f", backupFileName // Path to save the backup file with timestamp
-    ],
-    stdout: "piped",
-    stderr: "piped",
-    });
+      cmd: [
+          "pg_dump",
+          "-Fc", // Flag to create a dump in the custom format (binary format)
+          "-U", "postgres", // Database username
+          "-d", "postgres", // Database name
+          "-f", backupFileName // Path to save the backup file with timestamp
+      ],
+      stdout: "piped",
+      stderr: "piped",
+  });
 
     const { code } = await process.status();
 
